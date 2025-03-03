@@ -7,11 +7,14 @@ import cookieParser from "cookie-parser";
 import userRoute from "./routes/userRoute.js";
 import cors from "cors";
 
+
 databaseConnection();
 
 dotenv.config({
     path:".env"
 })
+
+
 
 
 const app = express();
@@ -27,6 +30,7 @@ app.use(cors(corsOptions));
  
 // api
 app.use("/api/v1/user", userRoute);
+
 
 app.listen(process.env.PORT,() => {
     console.log(`Server listen at port ${process.env.PORT}`);
